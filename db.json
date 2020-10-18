@@ -1,0 +1,332 @@
+{
+  "oreilly-books": [
+    {
+      "id": "oreilly01",
+      "bookTitle": "Analytical Skills for AI and Data Science",
+      "author": "Daniel Vaughan",
+      "datePublished": "May 26, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "How can your business and analytics units gain a competitive advantage by capturing the full potential of this predictive revolution? This practical guide presents a battle-tested end-to-end method to help you translate business decisions into tractable prescriptive solutions using data and AI as fundamental inputs."
+    },
+
+    {
+      "id": "oreilly02",
+      "bookTitle": "Chaos Engineering",
+      "author": "Casey Rosenthal, Nora Jones",
+      "datePublished": "May 26, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "Two of the field’s prominent figures, Casey Rosenthal and Nora Jones, pioneered the discipline while working together at Netflix. In this book, they expound on the what, how, and why of Chaos Engineering while facilitating a conversation from practitioners across industries. Many chapters are written by contributing authors to widen the perspective across verticals within (and beyond) the software industry."
+    },
+
+    {
+      "id": "oreilly03",
+      "bookTitle": "Kubernetes Operators",
+      "author": "Jason Dobies, Joshua Wood",
+      "datePublished": "February 25, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "Operators are a way of packaging, deploying, and managing Kubernetes applications. A Kubernetes application doesn’t just run on Kubernetes; it’s composed and managed in Kubernetes terms. Operators add application-specific operational knowledge to a Kubernetes cluster, making it easier to automate complex, stateful applications and to augment the platform."
+    },
+
+    {
+      "id": "oreilly04",
+      "bookTitle": "Innovative Tableau",
+      "author": "Ryan Sleeper",
+      "datePublished": "May 12, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "Level up with Tableau to build eye-catching, easy-to-interpret data visualizations. In this follow-up guide to Practical Tableau, author Ryan Sleeper takes you through a collection of unique tips and tutorials for using this popular software. Beginning to advanced Tableau users will learn how to go beyond Show Me to make better charts and learn dozens of tricks to improve both the author and user experience."
+    },
+
+    {
+      "id": "oreilly05",
+      "bookTitle": "Data Science from Scratch, 2nd Edition",
+      "author": "Joel Grus",
+      "datePublished": "May 26, 2019",
+      "ratingReview": "5/5",
+      "summaryText": "To really learn data science, you should not only master the tools—data science libraries, frameworks, modules, and toolkits—but also understand the ideas and principles underlying them"
+    }
+  ],
+
+
+
+  "manning-books": [
+
+    {
+      "id": "manning01",
+      "bookTitle": "Graph Databases in Action",
+      "author": "Dave Bechberger, Josh Perryman",
+      "datePublished": "October 14, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "In Graph Databases in Action, experts Dave Bechberger and Josh Perryman illuminate the design and implementation of graph databases in real-world applications. You'll learn how to choose the right database solutions for your tasks, and how to use your new knowledge to build agile, flexible, and high-performing graph-powered applications!"
+    },
+
+    {
+      "id": "manning02",
+      "bookTitle": "Node.js in Action, Second Edition ",
+      "author": "Alex Young, Bradley Meck, and Mike Cantelon",
+      "datePublished": "August 25, 2017",
+      "ratingReview": "5/5",
+      "summaryText": "The trick to mastering Node.js is learning how to build applications that fully exploit its powerful asynchronous event handling and non-blocking I/O features. The Node server radically simplifies event-driven real-time apps like chat, games, and live data analytics, and with its incredibly rich ecosystem of modules, tools, and libraries, it's hard to beat!"
+
+    },
+
+    {
+      "id": "manning03",
+      "bookTitle": "Street Coder",
+      "author": "Sedat Kapanoglu",
+      "datePublished": "October 14, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "Street Coder: Rules to break and how to break them is a programmer's survival guide, full of tips, tricks, and hacks that will make you a more efficient programmer. "
+    },
+
+    {
+      "id": "manning04",
+      "bookTitle": "Amazon Web Services in Action, Second Edition",
+      "author": "Michael Wittig and Andreas Wittig",
+      "datePublished": "September 25, 2018",
+      "ratingReview": "5/5",
+      "summaryText": "Amazon Web Services in Action, Second Edition is a comprehensive introduction to computing, storing, and networking in the AWS cloud."
+    },
+
+    {
+      "id": "manning05",
+      "bookTitle": "Making Sense of Cyber Security",
+      "author": "Thomas Kranz",
+      "datePublished": "October 17, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "A jargon-free, practical guide to the key concepts, terminology, and technologies of cybersecurity perfect for anyone planning or implementing a security strategy."
+    }
+
+
+  ],
+
+
+
+
+  "packt-books": [
+
+    {
+      "id": "packt01",
+      "bookTitle": "The Python Workshop",
+      "author": "Andrew Bird, Dr Lau Cher Han, Mario, Corchero-Jimenez",
+      "datePublished": "November 4, 2019",
+      "ratingReview": "5/5",
+      "summaryText": "The Python Workshop focuses on building up your practical skills so that you can work towards building up your machine learning skills as a data scientist, write scripts that help automate your life and save you time, or even create your own games and desktop applications. You'll learn from real examples that lead to real results."
+
+    },
+    {
+      "id": "packt02",
+      "bookTitle": "Django RESTful Web Services: The Easiest Way to Build Python RESTful APIs and Web Services with Django",
+      "author": " Gastón C. Hillar",
+      "datePublished": "January 25, 2018",
+      "ratingReview": "5/5",
+      "summaryText": "Django is a Python web framework that makes the web development process very easy. It reduces the amount of trivial code, which simplifies the creation of web applications and results in faster development. It is very powerful and a great choice for creating RESTful web services."
+    },
+
+    {
+      "id": "packt03",
+      "bookTitle": "The JavaScript Workshop",
+      "author": "Joseph Labrecque, Jahred Love , Daniel Rosenbaum",
+      "datePublished": "November 18, 2019",
+      "ratingReview": "5/5",
+      "summaryText": "The JavaScript Workshop focuses on building up your practical skills so that you can develop cutting-edge applications for web, mobile and desktop users. Alongside knowledge of HTML and CSS, JavaScript is a key skill for those looking to enter professional web development."
+
+    },
+
+    {
+      "id": "packt04",
+      "bookTitle": "ASP.NET Core 3 and Angular 9 - Third Edition",
+      "author": "Valerio De Sanctis",
+      "datePublished": "February 25, 2020",
+      "ratingReview": "4.5/5",
+      "summaryText": "Learning full stack development calls for knowledge of both frontend and backend web development. By covering the impressive capabilities of ASP.NET Core 3.1 and Angular 9, right from project setup through to the deployment phase, this book will help you to develop your skills effectively."
+    },
+
+    {
+      "id": "packt05",
+      "bookTitle": "Mastering Go - Second Edition",
+      "author": "Mihalis Tsoukalos",
+      "datePublished": "August 19, 2019",
+      "ratingReview": "4.5/5",
+      "summaryText": "Mastering Go, Second Edition shows how to put Go to work on real production systems. For programmers who already know the Go language basics, this book provides examples, patterns, and clear explanations to help you deeply understand Go’s capabilities and apply them in your programming work."
+    }
+
+
+
+  ],
+
+
+
+  "apress-books": [
+
+    {
+      "id": "apress01",
+      "bookTitle": "Pro-React16",
+      "author": "Adam Freeman",
+      "datePublished": "March 19, 2019",
+      "ratingReview": "5/5",
+      "summaryText": "Use the enormously popular React framework to build dynamic JavaScript applications that take advantage of the capabilities of modern browsers and devices"
+    },
+
+    {
+      "id": "apress02",
+      "bookTitle": "Pro Angular 9: Build Powerful and Dynamic Web Apps",
+      "author": "Adam Freeman",
+      "datePublished": "June 12, 2020",
+      "ratingReview": "5/5",
+      "summaryText": "Welcome to this one-stop-shop for learning Angular. Pro Angular is the most concise and comprehensive guide available, giving you the knowledge you need to take full advantage of this popular framework for building your own dynamic JavaScript applications."
+    },
+
+{
+
+  "id": "apress03",
+  "bookTitle": "Beginning Microsoft Power BI: A Practical Guide to Self-Service Data Analytics",
+  "author": "Dan Clark",
+  "datePublished": "February 21, 2020",
+  "ratingReview": "5/5",
+  "summaryText": "Analyze company data quickly and easily using Microsoft’s powerful data tools. Learn to build scalable and robust data models, clean and combine different data sources effectively, and create compelling and professional visuals."
+
+  },
+
+    {
+      "id": "apress04",
+      "bookTitle": "Pro .NET Benchmarking: The Art of Performance Measurement",
+      "author": "Andrey Akinshin",
+      "datePublished": "June 26, 2019",
+      "ratingReview": "5/5",
+      "summaryText": "Use this in-depth guide to correctly design benchmarks, measure key performance metrics of .NET applications, and analyze results. This book presents dozens of case studies to help you understand complicated benchmarking topics. You will avoid common pitfalls, control the accuracy of your measurements, and improve performance of your software."
+
+    },
+
+    {
+      "id": "apress05",
+      "bookTitle": "Mastering Salesforce DevOps: A Practical Guide to Building Trust While Delivering Innovation",
+      "author": " Andrew Davis",
+      "datePublished": "October 29, 2019",
+      "ratingReview": "5/5",
+      "summaryText": "This practical guide brings DevOps principles to Salesforce development. It fits together two major movements within the IT world: the movement to Software/Platform as a Service (SaaS/PaaS), and the DevOps movement. While SaaS and PaaS allow companies to invest in their core competencies rather than maintain their own infrastructure, the goal of DevOps is to optimize the process of delivering software innovation and value."
+    }
+
+  ],
+
+
+
+
+  "anti-heroes": [
+    {
+      "id": "4893hfwuig",
+      "firstName": "Eddy",
+      "lastName": "Brock",
+      "house": "Marvel",
+      "knownAs": "Venom"
+    },
+    {
+      "id": "9greg7t767g",
+      "firstName": "Wade",
+      "lastName": "Wilson",
+      "house": "Marvel",
+      "knownAs": "Deadpool"
+    },
+    {
+      "id": "89g6d5i6e45ud",
+      "firstName": "Jason",
+      "lastName": "Blood",
+      "house": "DC",
+      "knownAs": "Etrigan"
+    },
+    {
+      "id": "hvhj89gg8pt67",
+      "firstName": "Harley",
+      "lastName": "Quinn",
+      "house": "DC",
+      "knownAs": "Harley"
+    },
+    {
+      "id": "v7xSZAV",
+      "firstName": "Selina",
+      "lastName": "Kyle",
+      "house": "DC",
+      "knownAs": "Catwoman"
+    },
+    {
+      "id": "Nmla4EH",
+      "firstName": "Max",
+      "lastName": "Eisenhardt",
+      "house": "Marvel",
+      "knownAs": "Magneto"
+    }
+  ],
+  "heroes": [
+    {
+      "id": "7ggew732dw",
+      "firstName": "Barry",
+      "lastName": "Allen",
+      "house": "DC",
+      "knownAs": "Flash"
+    },
+    {
+      "id": "1ggew732dw",
+      "firstName": "Scott",
+      "lastName": "Summer",
+      "house": "Marvel",
+      "knownAs": "Cyclopes"
+    },
+    {
+      "id": "dfw7g2",
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "house": "Marvel",
+      "knownAs": "Spiderman"
+    },
+    {
+      "id": "9gfw9gde",
+      "firstName": "Bruce",
+      "lastName": "Wayne",
+      "house": "DC",
+      "knownAs": "Batman"
+    },
+    {
+      "firstName": "Devlin",
+      "lastName": "D.",
+      "house": "Starks",
+      "knownAs": "Wolf",
+      "id": "gjcM7z8"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Wick",
+      "house": "League of assassins ",
+      "knownAs": "Mr. Wick",
+      "id": "IE_sLcI"
+    }
+  ],
+  "villains": [
+    {
+      "firstName": "Lex",
+      "lastName": "Luther",
+      "house": "DC",
+      "knownAs": "Lex",
+      "id": "3290fhe"
+    },
+    {
+      "firstName": "Max",
+      "lastName": "Eisenhardt",
+      "house": "Marvel",
+      "knownAs": "Magneto",
+      "id": "6r8finlfy"
+    },
+    {
+      "firstName": "Darkseid",
+      "lastName": "none",
+      "house": "DC",
+      "knownAs": "The ruler of Apokolops",
+      "id": "87rfyvivlf78"
+    },
+    {
+      "firstName": "Victor",
+      "lastName": "Von Doom",
+      "house": "Marvel",
+      "knownAs": "Doctor Doom",
+      "id": "97fyiyif"
+    }
+  ]
+}
