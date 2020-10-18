@@ -37,7 +37,9 @@ const ApressBooks: FC = () => {
               <div>
                 <Typography>
                   <span>
-                    {`${ab.bookTitle} ${ab.author} ${ab.datePublished} ${ab.ratingReview} ${ab.summaryText}`}
+                    <li>
+                      {`${ab.bookTitle} ${ab.author} ${ab.datePublished} ${ab.ratingReview} ${ab.summaryText}`}
+                    </li>
                   </span>
                 </Typography>
               </div>

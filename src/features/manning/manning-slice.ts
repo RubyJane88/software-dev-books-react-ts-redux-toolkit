@@ -1,9 +1,10 @@
+import { createSlice } from '@reduxjs/toolkit';
 import {
   ManningBookModel,
   manningBookNameSpace,
   ManningBookStateType,
 } from './manning-types';
-import { createSlice } from '@reduxjs/toolkit';
+
 import { getManningBooksAction } from './manning.async.actions';
 
 export const initialState: ManningBookStateType = {
@@ -35,3 +36,5 @@ export const manningBookSlice = createSlice({
     });
   },
 });
+
+export default manningBookSlice.reducer;

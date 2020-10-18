@@ -7,6 +7,7 @@ import antiHeroReducer from '../features/anti-heroes/anti-hero.slice';
 import heroReducer from '../features/heroes/hero.slice';
 import villainReducer from '../features/villains/villain.slice';
 import apressBookReducer from '../features/apress/apress-slice';
+import manningBookReducer from '../features/manning/manning-slice';
 
 /*Merges the main reducer with the router state and dynamically injected reducers*/
 /*place all reducers here separated by commas. For example, heroReducer*/
@@ -16,7 +17,7 @@ const injectedReducers = {
   antiHero: antiHeroReducer,
   apressBook: apressBookReducer,
   //   packtBooks: packBookReducer,
-  //   manningBooks: manningBookReducer,
+  manningBook: manningBookReducer,
 };
 
 const rootReducer = combineReducers({
