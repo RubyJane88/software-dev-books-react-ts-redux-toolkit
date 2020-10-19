@@ -9,6 +9,7 @@ import villainReducer from '../features/villains/villain.slice';
 import apressBookReducer from '../features/apress/apress-slice';
 import manningBookReducer from '../features/manning/manning-slice';
 import oreillyBookReducer from '../features/oreilly/oreilly-slice';
+import packtBookReducer from '../features/packt/packt-slice';
 
 /*Merges the main reducer with the router state and dynamically injected reducers*/
 /*place all reducers here separated by commas. For example, heroReducer*/
@@ -17,7 +18,7 @@ const injectedReducers = {
   villain: villainReducer,
   antiHero: antiHeroReducer,
   apressBook: apressBookReducer,
-  //   packtBooks: packBookReducer,
+  packtBookReducer: packtBookReducer,
   manningBook: manningBookReducer,
   oreillyBookReducer: oreillyBookReducer,
 };

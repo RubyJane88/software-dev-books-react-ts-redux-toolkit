@@ -38,3 +38,5 @@ export const packtBookSlice = createSlice({
     });
   },
 });
+
+export default packtBookSlice.reducer;
