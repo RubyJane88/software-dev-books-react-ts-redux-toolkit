@@ -6,6 +6,7 @@ import {
 } from './oreilly-types';
 
 import { getOreillyBooksAction } from './oreilly-async.actions';
+import exp from 'constants';
 
 export const initialState: OreillyBookStateType = {
   oreillyBook: {} as OreillyBookModel,
@@ -14,7 +15,7 @@ export const initialState: OreillyBookStateType = {
   loading: false,
 };
 
-export const oreilyBookSlice = createSlice({
+export const oreillyBookSlice = createSlice({
   name: oreillyBookNameSpace,
   initialState: initialState,
 
@@ -37,3 +38,5 @@ export const oreilyBookSlice = createSlice({
     });
   },
 });
+
+export default oreillyBookSlice.reducer;

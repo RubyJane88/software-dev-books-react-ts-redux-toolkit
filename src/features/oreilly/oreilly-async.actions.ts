@@ -6,7 +6,7 @@ import { EndPoints } from '../../axios-http-client/api-config';
 export const getOreillyBooksAction = createAsyncThunk(
   OreillyBookActionTypes.FETCH_OREILLY_BOOKS,
   async () => {
-    const { data } = await getAxios<OreillyBookModel>(EndPoints.manningBooks);
+    const { data } = await getAxios<OreillyBookModel>(EndPoints.oreillyBooks);
     return data;
   },
 );
