@@ -5,8 +5,10 @@ import {
   OreillyBookStateType,
 } from './oreilly-types';
 
-import { getOreillyBooksAction } from './oreilly-async.actions';
-import exp from 'constants';
+import {
+  deleteOreillyBookByIdAction,
+  getOreillyBooksAction,
+} from './oreilly-async.actions';
 
 export const initialState: OreillyBookStateType = {
   oreillyBook: {} as OreillyBookModel,
@@ -19,7 +21,13 @@ export const oreillyBookSlice = createSlice({
   name: oreillyBookNameSpace,
   initialState: initialState,
 
-  reducers: {},
+  reducers: {
+    removeOreillyBookByIdTemporaryAction: (state, action) => {
+      state.oreillyBooks = state.oreillyBooks.filter(
+        ob => ob.id !== action.payload,
+      );
+    },
+  },
 
   extraReducers: builder => {
     /*GET ALL*/
@@ -36,7 +44,32 @@ export const oreillyBookSlice = createSlice({
       state.error = action?.payload.message;
       state.loading = false;
     });
+
+    /*DELETE ALL - optimistic update*/
+    builder.addCase(
+      deleteOreillyBookByIdAction.pending,
+      (state, action: any) => {
+        state.tempData = [...state.oreillyBooks];
+        state.error = '';
+        const index = state.oreillyBooks.findIndex(
+          o => o.id === action.meta.arg,
+        );
+        state.oreillyBooks.splice(index, 1);
+      },
+    );
+
+    builder.addCase(
+      deleteOreillyBookByIdAction.rejected,
+      (state, action: any) => {
+        state.error = action?.action.error?.message;
+        state.oreillyBooks = state.tempData as OreillyBookModel[];
+      },
+    );
   },
 });
+
+export const {
+  removeOreillyBookByIdTemporaryAction,
+} = oreillyBookSlice.actions;
 
 export default oreillyBookSlice.reducer;

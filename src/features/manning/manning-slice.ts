@@ -5,7 +5,10 @@ import {
   ManningBookStateType,
 } from './manning-types';
 
-import { getManningBooksAction } from './manning.async.actions';
+import {
+  deleteManningBookByIdAction,
+  getManningBooksAction,
+} from './manning.async.actions';
 
 export const initialState: ManningBookStateType = {
   manningBook: {} as ManningBookModel,
@@ -18,7 +21,13 @@ export const manningBookSlice = createSlice({
   name: manningBookNameSpace,
   initialState: initialState,
 
-  reducers: {},
+  reducers: {
+    removeManningBookByIdTemporaryAction: (state, action) => {
+      state.manningBooks = state.manningBooks.filter(
+        mb => mb.id !== action.payload,
+      );
+    },
+  },
 
   extraReducers: builder => {
     /*GET ALL*/
@@ -34,7 +43,31 @@ export const manningBookSlice = createSlice({
       state.error = action?.payload.message;
       state.loading = false;
     });
+
+    //DELETE - optimistic update
+    builder.addCase(
+      deleteManningBookByIdAction.pending,
+      (state, action: any) => {
+        state.tempData = [...state.manningBooks];
+        state.error = '';
+        const index = state.manningBooks.findIndex(
+          m => m.id === action.meta.arg,
+        );
+        state.manningBooks.splice(index, 1);
+      },
+    );
+    builder.addCase(
+      deleteManningBookByIdAction.rejected,
+      (state, action: any) => {
+        state.error = action?.error?.message;
+        state.manningBooks = state.tempData as ManningBookModel[];
+      },
+    );
   },
 });
+
+export const {
+  removeManningBookByIdTemporaryAction,
+} = manningBookSlice.actions;
 
 export default manningBookSlice.reducer;

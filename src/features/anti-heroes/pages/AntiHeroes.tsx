@@ -66,7 +66,7 @@ const AntiHeroes: FC = () => {
                   color={'default'}
                 >
                   Mark
-                </Button>{' '}
+                </Button>
                 <Button
                   className={classes.button}
                   onClick={() =>

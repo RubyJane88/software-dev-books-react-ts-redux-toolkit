@@ -28,7 +28,7 @@ const Heroes: FC = () => {
 
   useEffect(() => {
     dispatch(getHeroesAction());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

@@ -1,11 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   ApressBookStateType,
   ApressBookModel,
   apressBookNameSpace,
 } from './apress-types';
 
-import { getApressBooksAction } from './apress.async.actions';
+import {
+  deleteApressBookByIdAction,
+  getApressBooksAction,
+} from './apress.async.actions';
 
 export const initialState: ApressBookStateType = {
   apressBook: {} as ApressBookModel,
@@ -18,8 +21,19 @@ export const apressBookSlice = createSlice({
   name: apressBookNameSpace,
   initialState: initialState,
 
-  reducers: {},
+  /*non-async actions*/
+  reducers: {
+    removeApressBookByIdTemporaryAction: (
+      state,
+      action: PayloadAction<string>,
+    ) => {
+      state.apressBooks = state.apressBooks.filter(
+        ab => ab.id !== action.payload,
+      );
+    },
+  },
 
+  /*async action*/
   extraReducers: builder => {
     /*GET ALL*/
     builder.addCase(getApressBooksAction.pending, state => {
@@ -36,10 +50,26 @@ export const apressBookSlice = createSlice({
       state.error = action?.payload.message;
       state.loading = false;
     });
+
+    /*Delete All - optimistic update*/
+    builder.addCase(deleteApressBookByIdAction.pending, (state, action) => {
+      state.tempData = [...state.apressBooks];
+      state.error = '';
+      const index = state.apressBooks.findIndex(a => a.id === action.meta.arg);
+      state.apressBooks.splice(index, 1);
+    });
+
+    builder.addCase(
+      deleteApressBookByIdAction.rejected,
+      (state, action: any) => {
+        state.error = action?.error?.message;
+        state.apressBooks = state.tempData as ApressBookModel[];
+      },
+    );
   },
 });
 
-/*export all non async actions*/
-/* export const {removeApressBookByIdTempAction = apressBookSlice.action*/
+// non async actions*!
+export const { removeApressBookByIdTemporaryAction } = apressBookSlice.actions;
 
 export default apressBookSlice.reducer;

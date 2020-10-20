@@ -1,7 +1,17 @@
-import { Box, Typography } from '@material-ui/core';
+import {
+  Box,
+  Typography,
+  Theme,
+  createStyles,
+  Button,
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getManningBooksAction } from '../manning.async.actions';
+import {
+  deleteManningBookByIdAction,
+  getManningBooksAction,
+} from '../manning.async.actions';
 import { RootState } from '../../../store/reducers';
 
 const ManningBooks: FC = () => {
@@ -10,6 +20,8 @@ const ManningBooks: FC = () => {
   const { loading, manningBooks } = useSelector(
     (state: RootState) => state.manningBook,
   );
+
+  const classes = useStyles();
 
   useEffect(() => {
     console.log('manningBooks.tsx: useEffect');
@@ -41,6 +53,15 @@ const ManningBooks: FC = () => {
                   </span>
                 </Typography>
               </div>
+
+              <Button
+                className={classes.button}
+                onClick={() => dispatch(deleteManningBookByIdAction(mb.id))}
+                variant={'outlined'}
+                color={'secondary'}
+              >
+                DELETE in DB
+              </Button>
             </Box>
           ))
         )}
@@ -50,3 +71,14 @@ const ManningBooks: FC = () => {
 };
 
 export default ManningBooks;
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    button: {
+      margin: '0 0.5rem',
+      '&:focus': {
+        outline: 'none',
+      },
+    },
+  }),
+);

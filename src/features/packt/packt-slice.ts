@@ -1,11 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   PacktBookModel,
   packtBookNameSpace,
   PacktBookStateType,
 } from './packt-types';
 
-import { getPacktBooksAction } from './packt.async.actions';
+import {
+  getPacktBooksAction,
+  deletePacktBookByIdAction,
+} from './packt.async.actions';
 
 export const initialState: PacktBookStateType = {
   packtBook: {} as PacktBookModel,
@@ -18,7 +21,16 @@ export const packtBookSlice = createSlice({
   name: packtBookNameSpace,
   initialState: initialState,
 
-  reducers: {},
+  reducers: {
+    removePacktBookByIdTemporaryAction: (
+      state,
+      action: PayloadAction<string>,
+    ) => {
+      state.packtBooks = state.packtBooks.filter(
+        pb => pb.id !== action.payload,
+      );
+    },
+  },
 
   extraReducers: builder => {
     /*GET ALL*/
@@ -36,7 +48,25 @@ export const packtBookSlice = createSlice({
       state.error = action?.payload.message;
       state.loading = false;
     });
+
+    /*Delete All - optimistic update*/
+    builder.addCase(deletePacktBookByIdAction.pending, (state, action) => {
+      state.tempData = [...state.packtBooks];
+      state.error = '';
+      const index = state.packtBooks.findIndex(a => a.id === action.meta.arg);
+      state.packtBooks.splice(index, 1);
+    });
+
+    builder.addCase(
+      deletePacktBookByIdAction.rejected,
+      (state, action: any) => {
+        state.error = action?.error?.message;
+        state.packtBooks = state.tempData as PacktBookModel[];
+      },
+    );
   },
 });
+
+export const { removePacktBookByIdTemporaryAction } = packtBookSlice.actions;
 
 export default packtBookSlice.reducer;

@@ -21,4 +21,5 @@ export const oreillyBookNameSpace = 'oreilly';
 
 export const OreillyBookActionTypes = {
   FETCH_OREILLY_BOOKS: `@@/${oreillyBookNameSpace}/FETCH_OREILLY_BOOKS`,
+  REMOVE_OREILLY_BOOK_BY_ID: `@@/${oreillyBookNameSpace}/REMOVE_OREILLY_BOOK_BY_ID`,
 };

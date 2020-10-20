@@ -21,4 +21,5 @@ export const packtBookNameSpace = 'packt';
 
 export const PacktBookActionTypes = {
   FETCH_PACKT_BOOKS: `@@/${packtBookNameSpace}/FETCH_PACKT_BOOKS`,
+  REMOVE_PACKT_BOOKS_BY_ID: `@@/${packtBookNameSpace}/REMOVE_PACKT_BOOKS_BY_ID`,
 };

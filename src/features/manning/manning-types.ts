@@ -21,4 +21,5 @@ export const manningBookNameSpace = 'manning';
 
 export const ManningBookActionTypes = {
   FETCH_MANNING_BOOKS: `@@/${manningBookNameSpace}/FETCH_MANNING_BOOKS`,
+  REMOVE_MANNING_BOOK_BY_ID: `@@/${manningBookNameSpace}/REMOVE_MANNING_BOOK_BY_ID`,
 };

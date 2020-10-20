@@ -1,8 +1,18 @@
-import { Box, Typography, Theme, createStyles } from '@material-ui/core';
+import {
+  Box,
+  Typography,
+  Theme,
+  createStyles,
+  Button,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getApressBooksAction } from '../apress.async.actions';
+
+import {
+  deleteApressBookByIdAction,
+  getApressBooksAction,
+} from '../apress.async.actions';
 import { RootState } from '../../../store/reducers';
 
 const ApressBooks: FC = () => {
@@ -12,7 +22,10 @@ const ApressBooks: FC = () => {
     (state: RootState) => state.apressBook,
   );
 
+  const classes = useStyles();
+
   //local state
+  const [counter, setCounter] = useState('0');
 
   useEffect(() => {
     console.log('apressBooks.tsx: useEffect');
@@ -41,8 +54,25 @@ const ApressBooks: FC = () => {
                       {`${ab.bookTitle} ${ab.author} ${ab.datePublished} ${ab.ratingReview} ${ab.summaryText}`}
                     </li>
                   </span>
+                  {counter === ab.id && <span> - marked</span>}
                 </Typography>
               </div>
+              <Button
+                className={classes.button}
+                variant={'contained'}
+                color={'primary'}
+                onClick={() => setCounter(ab.id)}
+              >
+                Mark
+              </Button>
+              <Button
+                className={classes.button}
+                onClick={() => dispatch(deleteApressBookByIdAction(ab.id))}
+                variant={'outlined'}
+                color={'secondary'}
+              >
+                DELETE in DB
+              </Button>
             </Box>
           ))
         )}
