@@ -76,7 +76,7 @@ const AntiHeroes: FC = () => {
                   color={'secondary'}
                 >
                   Remove
-                </Button>{' '}
+                </Button>
                 <Button
                   className={classes.button}
                   onClick={() => dispatch(deleteAntiHeroByIdAction(ah.id))}

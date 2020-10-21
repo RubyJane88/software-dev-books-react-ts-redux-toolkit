@@ -71,5 +71,4 @@ export const apressBookSlice = createSlice({
 
 // non async actions*!
 export const { removeApressBookByIdTemporaryAction } = apressBookSlice.actions;
-
 export default apressBookSlice.reducer;

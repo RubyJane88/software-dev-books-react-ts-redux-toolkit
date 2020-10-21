@@ -13,6 +13,8 @@ import {
   getOreillyBooksAction,
 } from '../oreilly-async.actions';
 import { RootState } from '../../../store/reducers';
+import { removeApressBookByIdTemporaryAction } from '../../apress/apress-slice';
+import { removeOreillyBookByIdTemporaryAction } from '../oreilly-slice';
 
 const OreillyBooks: FC = () => {
   console.log('oreillyBooks.tsx: oreillyBooks');
@@ -63,6 +65,17 @@ const OreillyBooks: FC = () => {
                 onClick={() => setCounter(ob.id)}
               >
                 Mark
+              </Button>
+
+              <Button
+                className={classes.button}
+                onClick={() =>
+                  dispatch(removeOreillyBookByIdTemporaryAction(ob.id))
+                }
+                variant={'contained'}
+                color={'secondary'}
+              >
+                Remove
               </Button>
 
               <Button

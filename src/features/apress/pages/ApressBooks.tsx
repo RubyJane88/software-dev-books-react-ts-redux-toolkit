@@ -14,14 +14,14 @@ import {
   getApressBooksAction,
 } from '../apress.async.actions';
 import { RootState } from '../../../store/reducers';
+import { removeApressBookByIdTemporaryAction } from '../apress-slice';
 
 const ApressBooks: FC = () => {
   console.log('apressBooks.tsx: apressBooks');
   const dispatch = useDispatch();
-  const { loading, apressBooks } = useSelector(
+  const { apressBooks, loading } = useSelector(
     (state: RootState) => state.apressBook,
   );
-
   const classes = useStyles();
 
   //local state
@@ -51,7 +51,11 @@ const ApressBooks: FC = () => {
                 <Typography>
                   <span>
                     <li>
-                      {`${ab.bookTitle} ${ab.author} ${ab.datePublished} ${ab.ratingReview} ${ab.summaryText}`}
+                      {`${ab.bookTitle} 
+                     ${ab.author} 
+                      ${ab.datePublished}
+                        ${ab.ratingReview}
+                      ${ab.summaryText}`}
                     </li>
                   </span>
                   {counter === ab.id && <span> - marked</span>}
@@ -65,6 +69,17 @@ const ApressBooks: FC = () => {
               >
                 Mark
               </Button>
+              <Button
+                className={classes.button}
+                onClick={() =>
+                  dispatch(removeApressBookByIdTemporaryAction(ab.id))
+                }
+                variant={'contained'}
+                color={'secondary'}
+              >
+                Remove
+              </Button>
+
               <Button
                 className={classes.button}
                 onClick={() => dispatch(deleteApressBookByIdAction(ab.id))}

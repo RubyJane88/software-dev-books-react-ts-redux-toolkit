@@ -6,13 +6,14 @@ import {
   Button,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   deleteManningBookByIdAction,
   getManningBooksAction,
 } from '../manning.async.actions';
 import { RootState } from '../../../store/reducers';
+import { removeManningBookByIdTemporaryAction } from '../manning-slice';
 
 const ManningBooks: FC = () => {
   console.log('manningBooks.Tsx: ManningBooks');
@@ -22,6 +23,7 @@ const ManningBooks: FC = () => {
   );
 
   const classes = useStyles();
+  const [counter, setCounter] = useState('0');
 
   useEffect(() => {
     console.log('manningBooks.tsx: useEffect');
@@ -51,8 +53,29 @@ const ManningBooks: FC = () => {
                       {`${mb.bookTitle} ${mb.author} ${mb.datePublished} ${mb.ratingReview} ${mb.summaryText}`}
                     </li>
                   </span>
+                  {counter === mb.id && <span> - marked</span>}
                 </Typography>
               </div>
+
+              <Button
+                className={classes.button}
+                onClick={() =>
+                  dispatch(removeManningBookByIdTemporaryAction(mb.id))
+                }
+                variant={'contained'}
+                color={'secondary'}
+              >
+                Remove
+              </Button>
+
+              <Button
+                className={classes.button}
+                variant={'contained'}
+                color={'primary'}
+                onClick={() => setCounter(mb.id)}
+              >
+                Mark
+              </Button>
 
               <Button
                 className={classes.button}

@@ -7,6 +7,8 @@ import {
 import { RootState } from '../../../store/reducers';
 import { Box, Button, Typography, createStyles } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { removeApressBookByIdTemporaryAction } from '../../apress/apress-slice';
+import { removePacktBookByIdTemporaryAction } from '../packt-slice';
 
 const PacktBooks: FC = () => {
   console.log('packt-books.tsx: packtBooks');
@@ -62,6 +64,18 @@ const PacktBooks: FC = () => {
               >
                 Mark
               </Button>
+
+              <Button
+                className={classes.button}
+                onClick={() =>
+                  dispatch(removePacktBookByIdTemporaryAction(pb.id))
+                }
+                variant={'contained'}
+                color={'secondary'}
+              >
+                Remove
+              </Button>
+
               <Button
                 className={classes.button}
                 onClick={() => dispatch(deletePacktBookByIdAction(pb.id))}
